@@ -11,7 +11,10 @@ public:
   std::expected<bool, SystemError::UndefinedState> addLog(std::string_view log);
 
   std::expected<bool, SystemError::UndefinedState>
-  addError(SystemError::Error error);
+  addError(SystemError::OError error);
+
+private:
+  // Logger log;
 };
 } // namespace Logger
 } // namespace Market::core

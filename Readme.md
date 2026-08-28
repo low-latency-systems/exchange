@@ -5,26 +5,26 @@ The system is designed for parallel processing of trades while offering reliabil
 
 
 ## Achieving reliability 
-The matching engine, core of the system, can be rebuilt by replaying the state logs. Resulting in recovery of the system state within seconds after outage. 
+The matching engine, core of the system, can be rebuilt by replaying the state logs. Resulting in the recovery of the system state within seconds after outage. 
 
-## NB: The system is in development 
+## NB: The system is under development 
 
 ## Description of Units
 
 Units are the subsystems that work harmoniously to support real time trade execution. 
 
-1. Matching engine - core of the system bids and asks are matched. Supports Limit and Market Order
-                   - Contains a set of orderbooks 
-                   - maintains a registry of users to track institution and individual traders 
+1. Matching engine - core of the system. Matches bids and asks. Supports Limit and Market Order Types. 
+                   - Tracks organisations orderbooks. 
+                   - maintains a registry of users tracking institution and individual traders 
 
 2. Orderbook       - Tracks orders across each symbol. i.e. APPL has an orderbook and GOOGL has an orderbook 
                    - Contains the bids and asks for its assigned symbol 
 
 3. Order           - Basic unit detailing the status of a trade, quantity, side and amount. e.t.c. 
 
-4. User            - Unit tracking the users data .i.e. amount in their account, profits and losses and trades conducted. 
+4. User            - Unit tracking users data .i.e. amount in their account, profits, losses and trades conducted. 
 
-5. Snapstore       - a unit tracking activities of the matching engine. The information is logged to disk and preloaded for replay 
+5. Snapstore       - Unit recording matching engine activities. The information is logged to disk and preloaded for replay 
 
 
 ## Development Features and tools to be supported
